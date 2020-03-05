@@ -10,12 +10,12 @@ import java.util.List;
 
 public class SeleniumUtils {
 
-    public static List<String> getAllSelectOptions (WebElement element) {
+    public static List<String> getAllSelectOptions(WebElement element) {
 
         Select select = new Select(element);
         List<String> options = new ArrayList<>();
 
-        for (WebElement eachOption: select.getOptions()) {
+        for (WebElement eachOption : select.getOptions()) {
             options.add(eachOption.getText());
         }
         return options;
@@ -26,5 +26,13 @@ public class SeleniumUtils {
     public static void waitForVisibility(WebElement element, int seconds) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), seconds);
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    public static void pause(int sec) {
+        try {
+            Thread.sleep(sec * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
