@@ -14,13 +14,13 @@ public class AddTeacherPage {
     @FindBy (xpath = "//span[@class='text-uppercase']")
     public WebElement schoolText;
 
-    @FindBy (xpath = "//a[@class='subdrop']")
+    @FindBy (xpath = "(//li[@class='submenu'])[1]")
     public WebElement teachersButtonDropdown;
 
     @FindBy (linkText = "Add Teacher")
     public WebElement addTeacherButton;
 
-    @FindBy (xpath = "(//input[@type='text'])[1]")
+    @FindBy (xpath = "//label[contains(text(),'Firstname')]/preceding-sibling::*")
     public WebElement firstNameInput;
 
     @FindBy (xpath = "(//input[@type='text'])[2]")
@@ -46,9 +46,6 @@ public class AddTeacherPage {
 
     @FindBy (xpath = "(//input[@type='text'])[6]")
     public WebElement joiningDateInput;
-
-    @FindBy (xpath = "(//input[@type='password'])[2]")
-    public WebElement confirmPasswordInput;
 
     @FindBy (xpath = "//input[@type='number']")
     public WebElement mobileNumberInput;
