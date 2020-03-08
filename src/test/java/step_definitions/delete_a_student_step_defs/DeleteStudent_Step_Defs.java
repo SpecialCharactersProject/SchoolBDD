@@ -1,4 +1,4 @@
-package step_definitions.delete_a_student_sep_defs;
+package step_definitions.delete_a_student_step_defs;
 
 
 import cucumber.api.java.en.Given;
@@ -7,8 +7,6 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.delete_student_page.Delete_StudentLandingPage;
 import utilities.Config;
 import utilities.DBUtility;
@@ -25,8 +23,8 @@ public class DeleteStudent_Step_Defs {
     WebElement studentIdUI;
     String compareID = "";
 
+    // DELETING STUDENT FUNCTION //
 
-    // DELETING STUDENT FUNCTION
     @Given("the user is on the Student's Module")
     public void the_user_is_on_the_Student_s_Module() {
         Driver.getDriver().get(Config.getProperty("cybertektrainingURL"));
@@ -78,12 +76,8 @@ public class DeleteStudent_Step_Defs {
 
         Driver.getDriver().navigate().refresh();
         delStudent.studListView.click();
-//        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),10);
-//        wait.until(ExpectedConditions.invisibilityOf(studentIdUI));
         Driver.getDriver().navigate().refresh();
         SeleniumUtils.pause(4);
-//        delStudent.studListView.click();
-//        SeleniumUtils.pause(3);
     }
 
     @When("the user sees that student removed from the All Students page \\(UI).")
@@ -98,40 +92,11 @@ public class DeleteStudent_Step_Defs {
     @Then("the user should be able to see that student removed from the database.")
     public void the_user_should_be_able_to_see_that_student_removed_from_the_database() throws SQLException {
         DBUtility.createConnectionSchoolDB();
-//        List<Map<Object, Object>> dbInfo = DBUtility.executeQuery("select first_name,last_name, student_id from student order by student_id");
         List<Map<Object, Object>> dbInfo = DBUtility.executeQuery("select s.first_name, s.last_name, c.student_id from student s inner join contact c on s.student_id = c.student_id");
         for (Map<Object, Object> map : dbInfo) {
             Assert.assertFalse("Database verification failed", map.get("STUDENT_ID").toString().equalsIgnoreCase(compareID));
         }
 
     }
-
-
-    // CREATING STUDENT FUNCTION
-
-    @When("user clicks on Add Student")
-    public void user_clicks_on_Add_Student() throws InterruptedException {
-        delStudent.addStudentButton.click();
-        SeleniumUtils.pause(3);
-    }
-
-//    @When("user fills out all information")
-//    public void user_fills_out_all_information() {
-//        // Write code here that turns the phrase above into concrete actions
-//        throw new cucumber.api.PendingException();
-//    }
-
-    @When("user clicks on Submit button")
-    public void user_clicks_on_Submit_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
-    }
-
-    @Then("user should see new user being created.")
-    public void user_should_see_new_user_being_created() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
-    }
-
 
 }
