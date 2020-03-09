@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 
-        plugin = "html:target/cucumber-reports",
+        plugin = {"html:target/cucumber-reports", "json:target/cukesreport.json"},
 
         features = "src/test/resources/features",    //you DO NOT want to change this; it will look into features directory and it will be recognized by tags
         glue = "step_definitions",                    //you DO NOT want to change this; it will look into features directory and it will be recognized by tags
