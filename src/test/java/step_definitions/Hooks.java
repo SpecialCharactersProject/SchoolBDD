@@ -5,6 +5,7 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import pages.LoginPage;
 import utilities.Driver;
 import utilities.TempStorage;
 
@@ -12,6 +13,8 @@ public class Hooks {
 
     @Before
     public void setup() {
+        LoginPage loginPage = new LoginPage();
+        loginPage.login();
         TempStorage.clear();
         //you can put anything that you want to run before each Scenario, but in our framework we won't really use it
     }
@@ -26,7 +29,7 @@ public class Hooks {
             scenario.embed(screenshot, "image/png");
         }
 
-        Driver.quitDriver();
+//        Driver.quitDriver();
     }
 
 

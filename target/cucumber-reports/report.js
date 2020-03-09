@@ -1,24 +1,16 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/DeleteStudent.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/resources/features/CreatingATeacher.feature");
 formatter.feature({
-  "name": "Delete a Student",
+  "name": "",
   "description": "",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "name": "@deleteStudent"
-    }
-  ]
+  "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Verifying delete student function DELETION",
+  "name": "",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@deleteStudent"
-    },
-    {
-      "name": "@deleteStudent2"
+      "name": "@SchoolTest"
     }
   ]
 });
@@ -26,91 +18,147 @@ formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user is on the Student\u0027s Module",
+  "name": "the user is on the Teacher\u0027s Module",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_is_on_the_Student_s_Module()"
+  "location": "School_StepDefs.the_user_is_on_the_Teacher_s_Module()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user clicks on Students dropdown menu",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_clicks_on_Students_dropdown_menu()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user chooses All Students option",
+  "name": "the user clicks on Add Teacher",
   "keyword": "And "
 });
 formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_chooses_All_Students_option()"
+  "location": "School_StepDefs.the_user_clicks_on_Add_Teacher()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user opens already created student",
+  "name": "the user enters",
+  "rows": [
+    {
+      "cells": [
+        "FirstName",
+        "Venkat"
+      ]
+    },
+    {
+      "cells": [
+        "Email",
+        "venkat@gmail.com"
+      ]
+    },
+    {
+      "cells": [
+        "Password",
+        "123456"
+      ]
+    },
+    {
+      "cells": [
+        "Subject",
+        "Math"
+      ]
+    },
+    {
+      "cells": [
+        "Gender",
+        "Male"
+      ]
+    },
+    {
+      "cells": [
+        "BirthDate",
+        "09/01/2020"
+      ]
+    },
+    {
+      "cells": [
+        "Batch",
+        "7"
+      ]
+    },
+    {
+      "cells": [
+        "LastName",
+        "Patel"
+      ]
+    },
+    {
+      "cells": [
+        "JoiningDate",
+        "02/02/2020"
+      ]
+    },
+    {
+      "cells": [
+        "MobileNumber",
+        "7731112222"
+      ]
+    },
+    {
+      "cells": [
+        "Department",
+        "English"
+      ]
+    },
+    {
+      "cells": [
+        "Salary",
+        "50000"
+      ]
+    },
+    {
+      "cells": [
+        "Section",
+        "9.0"
+      ]
+    },
+    {
+      "cells": [
+        "PermanentAddress",
+        "123 Main St"
+      ]
+    }
+  ],
   "keyword": "And "
 });
 formatter.match({
-  "location": "DeleteStudent_Step_Defs.user_opens_alerady_created_student()"
+  "location": "School_StepDefs.the_user_enters(DataTable)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user clicks on 3 dots sign in top right corner of student\u0027s name",
+  "name": "the user clicks on the Submit button",
   "keyword": "And "
 });
 formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_clicks_on_dots_sign_in_top_right_corner_of_student_s_name(Integer)"
+  "location": "School_StepDefs.the_user_clicks_on_the_Submit_button()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user clicks on delete option",
+  "name": "the user should see a new created teacher on the All Teacher page(UI)",
   "keyword": "And "
 });
 formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_clicks_on_delete_option()"
+  "location": "School_StepDefs.the_user_should_see_a_new_created_teacher_on_the_All_Teacher_page_UI()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the user clicks on red Delete button",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_clicks_on_red_Delete_button()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user sees that student removed from the All Students page (UI).",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_sees_that_student_removed_from_the_All_Students_page_UI()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user should be able to see that student removed from the database.",
+  "name": "the user should see a new created teacher in the database",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "DeleteStudent_Step_Defs.the_user_should_be_able_to_see_that_student_removed_from_the_database()"
+  "location": "School_StepDefs.the_user_should_see_a_new_created_teacher_in_the_database()"
 });
 formatter.result({
   "status": "passed"
