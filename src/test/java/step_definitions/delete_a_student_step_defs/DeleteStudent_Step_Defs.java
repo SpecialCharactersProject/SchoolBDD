@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.LoginPage;
 import pages.delete_student_page.Delete_StudentLandingPage;
 import utilities.Config;
 import utilities.DBUtility;
@@ -28,6 +29,8 @@ public class DeleteStudent_Step_Defs {
     @Given("the user is on the Student's Module")
     public void the_user_is_on_the_Student_s_Module() {
         Driver.getDriver().get(Config.getProperty("cybertektrainingURL"));
+//        LoginPage loginPage = new LoginPage();
+//        loginPage.login();
     }
 
     @When("the user clicks on Students dropdown menu")
