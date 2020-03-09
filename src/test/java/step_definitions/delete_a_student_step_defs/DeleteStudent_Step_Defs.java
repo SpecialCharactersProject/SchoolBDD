@@ -28,9 +28,8 @@ public class DeleteStudent_Step_Defs {
 
     @Given("the user is on the Student's Module")
     public void the_user_is_on_the_Student_s_Module() {
-        Driver.getDriver().get(Config.getProperty("cybertektrainingURL"));
-//        LoginPage loginPage = new LoginPage();
-//        loginPage.login();
+        LoginPage loginPage = new LoginPage();
+        loginPage.login();
     }
 
     @When("the user clicks on Students dropdown menu")
@@ -94,7 +93,7 @@ public class DeleteStudent_Step_Defs {
 
     @Then("the user should be able to see that student removed from the database.")
     public void the_user_should_be_able_to_see_that_student_removed_from_the_database() throws SQLException {
-        DBUtility.createConnectionSchoolDB();
+        DBUtility.createConnection();
         List<Map<Object, Object>> dbInfo = DBUtility.executeQuery("select s.first_name, s.last_name, c.student_id from student s inner join contact c on s.student_id = c.student_id");
         for (Map<Object, Object> map : dbInfo) {
             Assert.assertFalse("Database verification failed", map.get("STUDENT_ID").toString().equalsIgnoreCase(compareID));

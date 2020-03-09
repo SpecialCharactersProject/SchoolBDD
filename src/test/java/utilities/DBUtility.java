@@ -12,10 +12,23 @@ public class DBUtility {
     private static Statement statement;
     private static ResultSet resultSet;
 
+//    public static void createConnection () throws SQLException {
+//        switch (Config.getProperty("dbType")) {
+//            case "oracle":
+//                connection = DriverManager.getConnection(Config.getProperty("oracleURL"), Config.getProperty("oracleUsername"), Config.getProperty("oraclePassword"));
+//                break;
+//            case "mysql":
+//                //create connection for mysql
+//                break;
+//            default:
+//                connection = null;
+//        }
+//    }
+
     public static void createConnection () throws SQLException {
         switch (Config.getProperty("dbType")) {
             case "oracle":
-                connection = DriverManager.getConnection(Config.getProperty("oracleURL"), Config.getProperty("oracleUsername"), Config.getProperty("oraclePassword"));
+                connection = DriverManager.getConnection(Config.getProperty("schoolDBURL"), Config.getProperty("schoolDBUsername"), Config.getProperty("schoolDBpassword"));
                 break;
             case "mysql":
                 //create connection for mysql
