@@ -47,7 +47,7 @@ public class DeleteStudent_Step_Defs {
         delStudent.studListView.click();
         Driver.getDriver().navigate().refresh();
         SeleniumUtils.pause(4);
-       WebElement studentIdUI = delStudent.studentId;
+        WebElement studentIdUI = delStudent.studentId;
         SeleniumUtils.pause(5);
         compareID = studentIdUI.getText();
         Driver.getDriver().navigate().back();
