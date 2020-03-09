@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: EMPTY_NAME
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 2, Errors: 0, Skipped: 10, Time elapsed: 229.558 s <<< FAILURE! - in EMPTY_NAME
+Verification of the ability to create a student(EMPTY_NAME)  Time elapsed: 44.823 s  <<< FAILURE!
+java.lang.AssertionError
+
+Verification of the ability to update a student(EMPTY_NAME)  Time elapsed: 37.111 s  <<< FAILURE!
+org.junit.ComparisonFailure: TEST FAILED expected:<[]Phyliss> but was:<[John]Phyliss>
+

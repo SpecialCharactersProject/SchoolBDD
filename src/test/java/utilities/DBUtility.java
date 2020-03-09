@@ -15,7 +15,7 @@ public class DBUtility {
     public static void createConnection () throws SQLException {
         switch (Config.getProperty("dbType")) {
             case "oracle":
-                connection = DriverManager.getConnection(Config.getProperty("oracleURL"), Config.getProperty("oracleUsername"), Config.getProperty("oraclePassword"));
+                connection = DriverManager.getConnection(Config.getProperty("schoolURL"), Config.getProperty("schoolUsername"), Config.getProperty("schoolPassword"));
                 break;
             case "mysql":
                 //create connection for mysql
